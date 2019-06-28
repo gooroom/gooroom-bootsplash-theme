@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# add splash to GRUB_CMDLINE_LINUX_DEFAULT
+/usr/share/plymouth/themes/gooroom-logo/bootsplash-postinst
+
+# update grub
+update-grub
+
+# set
+plymouth-set-default-theme -R gooroom-logo

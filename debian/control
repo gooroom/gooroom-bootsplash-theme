@@ -1,0 +1,13 @@
+Source: gooroom-bootsplash-theme
+Section: admin
+Priority: optional
+Maintainer: gooroom <gooroom@gooroom.kr>
+Build-Depends: debhelper
+Standards-Version: 1.0.0
+#Homepage: https://git.gooroom.kr/gooroom-bootsplash-theme
+
+Package: gooroom-bootsplash-theme
+Architecture: all
+Depends: plymouth, grub2-common
+Description: gooroom boot splash theme
+ Gooroom Boot Splash Theme
