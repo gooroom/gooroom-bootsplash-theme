@@ -1,0 +1,95 @@
+#
+#  Copyright (C) 2019 gooroom <gooroom@gooroom.kr>
+#
+#   This package is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#   .
+#   This package is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#   .
+#   You should have received a copy of the GNU General Public License
+#   along with this program. If not, see <https://www.gnu.org/licenses/>
+#   .
+#   On Debian systems, the complete text of the GNU General
+#   Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+#
+
+win_width = Window.GetWidth();
+win_height = Window.GetHeight();
+
+
+# logo image
+width_ratio = 9.4;
+height_ratio = 23.1;
+y_ratio = 31;
+logo = Image ("gooroom-symbol.png");
+#logo.width = win_width * width_ratio / 100;
+#logo.height = win_height * height_ratio / 100;
+logo.width = 120;
+logo.height = 184.8;
+logo.image = logo.Scale (logo.width, logo.height);
+logo.x = Window.GetX() + win_width / 2 - logo.width / 2;
+logo.y = Window.GetY() + win_height * y_ratio / 100;
+
+logo.sprite = Sprite ();
+logo.sprite.SetImage (logo.image);
+logo.sprite.SetX (logo.x);
+logo.sprite.SetY (logo.y);
+logo.sprite.SetOpacity (1);
+
+# gooroom name
+width_ratio = 0.094;
+height_ratio = 0.024;
+y_ratio = 0.901;
+#gooroom_name = Image ("black.png");
+##gooroom_name.width = win_width * width_ratio;
+##gooroom_name.height = win_height * height_ratio;
+#gooroom_name.width = 120;
+#gooroom_name.height = 19.2;
+#gooroom_name.image = gooroom_name.Scale (gooroom_name.width, gooroom_name.height);
+#gooroom_name.x = Window.GetX() + win_width / 2 - gooroom_name.width / 2;
+#gooroom_name.y = Window.GetY() + win_height * y_ratio;
+#
+#gooroom_name.sprite = Sprite ();
+#gooroom_name.sprite.SetImage (gooroom_name.image);
+#gooroom_name.sprite.SetX (gooroom_name.x);
+#gooroom_name.sprite.SetY (gooroom_name.y);
+#gooroom_name.sprite.SetOpacity (1);
+
+# white name
+gooroom_name = Image ("white.png");
+#gooroom_name.width = win_width * width_ratio;
+#gooroom_name.height = win_height * height_ratio;
+gooroom_name.width = 120;
+gooroom_name.height = 19.2;
+gooroom_name.image = gooroom_name.Scale (gooroom_name.width, gooroom_name.height);
+gooroom_name.x = Window.GetX() + win_width / 2 - gooroom_name.width / 2;
+gooroom_name.y = Window.GetY() + win_height * y_ratio;
+
+gooroom_name.sprite = Sprite ();
+gooroom_name.sprite.SetImage (gooroom_name.image);
+gooroom_name.sprite.SetX (gooroom_name.x);
+gooroom_name.sprite.SetY (gooroom_name.y);
+gooroom_name.sprite.SetOpacity (1);
+
+
+# white
+#Window.SetBackgroundTopColor (0.88, 0.88, 0.88);
+#Window.SetBackgroundBottomColor (0.88, 0.88, 0.88);
+Window.SetBackgroundTopColor (0.16, 0.16, 0.16);
+Window.SetBackgroundBottomColor (0.16, 0.16, 0.16);
+
+status = "normal";
+
+
+fun display_normal_callback ()
+{
+    #Window.SetBackgroundTopColor (0.88, 0, 0);
+}
+
+Plymouth.SetDisplayNormalFunction (display_normal_callback);
+
