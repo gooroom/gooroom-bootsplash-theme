@@ -1,0 +1,15 @@
+Source: gooroom-bootsplash-theme
+Section: admin
+Priority: optional
+Maintainer: gooroom <gooroom@gooroom.kr>
+Build-Depends: debhelper
+Standards-Version: 1.0.0
+Homepage: http://www.gooroom.kr
+Vcs-Git: https://github.com/gooroom/gooroom-bootsplash-theme.git
+Vcs-Browser: https://github.com/gooroom/gooroom-bootsplash-theme
+
+Package: gooroom-bootsplash-theme
+Architecture: all
+Depends: plymouth
+Description: gooroom boot splash theme
+ Gooroom Boot Splash Theme

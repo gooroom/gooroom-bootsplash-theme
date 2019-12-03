@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=gooroom-grub
+Description=Gooroom Grub default theme
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/gooroom-grub
+ScriptFile=/usr/share/plymouth/themes/gooroom-grub/gooroom-grub.script

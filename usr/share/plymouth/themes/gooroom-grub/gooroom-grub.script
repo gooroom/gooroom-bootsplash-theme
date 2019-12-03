@@ -1,0 +1,7 @@
+logo.image = Image("gooroom_grub_background_logo.png");
+
+logo.sprite = Sprite(logo.image);
+logo.sprite.SetX (Window.GetWidth() / 2 - logo.image.GetWidth() / 2);
+logo.sprite.SetY (Window.GetHeight() / 2 - logo.image.GetHeight() / 2);
+logo.sprite.SetOpacity (1);
+logo.sprite.SetZ (10000);

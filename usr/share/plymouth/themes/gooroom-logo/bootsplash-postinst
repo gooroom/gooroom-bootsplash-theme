@@ -1,0 +1,29 @@
+#!/usr/bin/python2
+
+import os
+import tempfile
+import sys
+import shutil
+
+grub_fname = '/etc/default/grub'
+tmp_ft, tmp_dir = tempfile.mkstemp()
+tmp_grub = open(tmp_dir, 'w')
+if tmp_grub == None:
+    sys.exit(1)
+
+with open(grub_fname, 'r') as grub_fp:
+    for line in grub_fp:
+        grubs = line.split('="')
+        if 'GRUB_CMDLINE_LINUX_DEFAULT' == grubs[0]:
+            ol = grubs[1].replace('"', '')
+            ol = ol.replace('\n', '')
+            if ol.find('splash') == -1:
+                ol = '%s splash' % ol
+
+            line = '%s=\"%s\"\n'% (grubs[0], ol)
+
+        tmp_grub.writelines(line)
+
+os.close(tmp_ft)
+os.remove(grub_fname)
+shutil.move(tmp_dir, grub_fname)
