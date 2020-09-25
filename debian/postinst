@@ -1,10 +1,13 @@
 #!/bin/sh
 
-# add splash to GRUB_CMDLINE_LINUX_DEFAULT
-/usr/share/plymouth/themes/hancom-gooroom/bootsplash-postinst
+dpkg -l | grep -q gooroom-boot-protector
+if [ $? -ne 0 ] ; then
+    # add splash to GRUB_CMDLINE_LINUX_DEFAULT
+    /usr/share/plymouth/themes/hancom-gooroom/bootsplash-postinst
 
-# update grub
-update-grub
+    # update grub
+    update-grub
+fi
 
 # set
 plymouth-set-default-theme -R hancom-gooroom

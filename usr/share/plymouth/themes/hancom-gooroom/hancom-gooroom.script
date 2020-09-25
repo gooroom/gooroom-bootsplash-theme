@@ -32,10 +32,11 @@ win_x_ratio = 1280 / win_width;
 
 
 # ----------------------------- Logo -----------------------------
-logo_y_ratio = 0.415;
+logo_y_ratio = 0.396;
 
 logo.width = 120 / win_x_ratio;
-logo.height = 60 / win_x_ratio;
+logo.height = 184 / win_x_ratio;
+
 logo.x = Window.GetX () + win_width / 2 - logo.width / 2;
 logo.y = Window.GetY () + win_height * logo_y_ratio;
 
@@ -49,60 +50,61 @@ logo.sprite.SetY (logo.y);
 logo.sprite.SetOpacity (1);
 
 
-# ----------------------------- Symbol -----------------------------
-symbol_y_ratio = 0.904;
-#symbol = Image ("symbol.png");
+## ----------------------------- Symbol -----------------------------
+#symbol_y_ratio = 0.904;
+##symbol = Image ("symbol.png");
+#
+#symbol.width = 180 / win_x_ratio;
+#symbol.height = 17 / win_x_ratio;
+#symbol.x = Window.GetX () + win_width / 2 - symbol.width / 2;
+#symbol.y = Window.GetY () + win_height * symbol_y_ratio;
+#
+#symbol.origin_image = Image ("symbol.png");
+#symbol.image = symbol.origin_image.Scale (symbol.width, symbol.height);
+#
+#symbol.sprite = Sprite ();
+#symbol.sprite.SetImage (symbol.image);
+#symbol.sprite.SetX (symbol.x);
+#symbol.sprite.SetY (symbol.y);
+#symbol.sprite.SetOpacity (1);
 
-symbol.width = 180 / win_x_ratio;
-symbol.height = 17 / win_x_ratio;
-symbol.x = Window.GetX () + win_width / 2 - symbol.width / 2;
-symbol.y = Window.GetY () + win_height * symbol_y_ratio;
 
-symbol.origin_image = Image ("symbol.png");
-symbol.image = symbol.origin_image.Scale (symbol.width, symbol.height);
+## ----------------------------- Bullet -----------------------------
+#bullet_y_ratio = 0.736;
+#bullets_width = 20 * (INDEX + 1);
+#bullets_ratio_width = bullets_width / win_x_ratio;
+#
+#bullet.width = 20 / win_x_ratio;
+#bullet.height = bullet.width;
+#bullet.x = Window.GetX () + win_width / 2 - bullets_ratio_width / 2;
+#bullet.y = Window.GetY () + win_height * bullet_y_ratio;
+#
+#progress_indicator.bullet_on_img[0] = Image ("bullet-blue.png").Scale (bullet.width, bullet.height);
+#progress_indicator.bullet_on_img[1] = Image ("bullet-green.png").Scale (bullet.width, bullet.height);
+#progress_indicator.bullet_on_img[2] = Image ("bullet-lightblue.png").Scale (bullet.width, bullet.height);
+#progress_indicator.bullet_on_img[3] = Image ("bullet-violet.png").Scale (bullet.width, bullet.height);
+#progress_indicator.bullet_on_img[4] = Image ("bullet-orange.png").Scale (bullet.width, bullet.height);
+#progress_indicator.bullet_on_img[5] = Image ("bullet-red.png").Scale (bullet.width, bullet.height);
+#progress_indicator.bullet_off_img = Image ("bullet-silver.png").Scale (bullet.width, bullet.height);
 
-symbol.sprite = Sprite ();
-symbol.sprite.SetImage (symbol.image);
-symbol.sprite.SetX (symbol.x);
-symbol.sprite.SetY (symbol.y);
-symbol.sprite.SetOpacity (1);
 
-
-# ----------------------------- Bullet -----------------------------
-bullet_y_ratio = 0.736;
-bullets_width = 20 * (INDEX + 1);
-bullets_ratio_width = bullets_width / win_x_ratio;
-
-bullet.width = 20 / win_x_ratio;
-bullet.height = bullet.width;
-bullet.x = Window.GetX () + win_width / 2 - bullets_ratio_width / 2;
-bullet.y = Window.GetY () + win_height * bullet_y_ratio;
-
-progress_indicator.bullet_on_img[0] = Image ("bullet-blue.png").Scale (bullet.width, bullet.height);
-progress_indicator.bullet_on_img[1] = Image ("bullet-green.png").Scale (bullet.width, bullet.height);
-progress_indicator.bullet_on_img[2] = Image ("bullet-lightblue.png").Scale (bullet.width, bullet.height);
-progress_indicator.bullet_on_img[3] = Image ("bullet-violet.png").Scale (bullet.width, bullet.height);
-progress_indicator.bullet_on_img[4] = Image ("bullet-orange.png").Scale (bullet.width, bullet.height);
-progress_indicator.bullet_on_img[5] = Image ("bullet-red.png").Scale (bullet.width, bullet.height);
-progress_indicator.bullet_off_img = Image ("bullet-silver.png").Scale (bullet.width, bullet.height);
-
-# ----------------------------- Progress Indicator -----------------------------
-fun set_progress_indicator (start_with_on) {
-  for (cnt = 0; cnt <= INDEX; cnt++) {
-    bullet_x = bullet.x + bullet.width * cnt;
-    bullet_y = bullet.y;
-
-    progress_indicator.bullets_on[cnt].sprite = Sprite (progress_indicator.bullet_on_img[cnt]);
-    progress_indicator.bullets_on[cnt].sprite.SetX (bullet_x);
-    progress_indicator.bullets_on[cnt].sprite.SetY (bullet_y);
-    progress_indicator.bullets_on[cnt].sprite.SetOpacity (start_with_on);
-
-    progress_indicator.bullets_off[cnt].sprite = Sprite (progress_indicator.bullet_off_img);
-    progress_indicator.bullets_off[cnt].sprite.SetX (bullet_x);
-    progress_indicator.bullets_off[cnt].sprite.SetY (bullet_y);
-    progress_indicator.bullets_off[cnt].sprite.SetOpacity (!start_with_on);
-  }
-}
+## ----------------------------- Progress Indicator -----------------------------
+#fun set_progress_indicator (start_with_on) {
+#  for (cnt = 0; cnt <= INDEX; cnt++) {
+#    bullet_x = bullet.x + bullet.width * cnt;
+#    bullet_y = bullet.y;
+#
+#    progress_indicator.bullets_on[cnt].sprite = Sprite (progress_indicator.bullet_on_img[cnt]);
+#    progress_indicator.bullets_on[cnt].sprite.SetX (bullet_x);
+#    progress_indicator.bullets_on[cnt].sprite.SetY (bullet_y);
+#    progress_indicator.bullets_on[cnt].sprite.SetOpacity (start_with_on);
+#
+#    progress_indicator.bullets_off[cnt].sprite = Sprite (progress_indicator.bullet_off_img);
+#    progress_indicator.bullets_off[cnt].sprite.SetX (bullet_x);
+#    progress_indicator.bullets_off[cnt].sprite.SetY (bullet_y);
+#    progress_indicator.bullets_off[cnt].sprite.SetOpacity (!start_with_on);
+#  }
+#}
 
 # ----------------------------- Display Normal stuff -----------------------------
 status = "normal";
@@ -113,53 +115,53 @@ fun display_normal_callback () {
 
 Plymouth.SetDisplayNormalFunction (display_normal_callback);
 
-# ----------------------------- Progress stuff -----------------------------
-fun switch_on_bullet (bullets_on, bullets_off, bullet_number) {
-  bullets_off[bullet_number].sprite.SetOpacity (0);
-  bullets_on[bullet_number].sprite.SetOpacity (1);
+## ----------------------------- Progress stuff -----------------------------
+#fun switch_on_bullet (bullets_on, bullets_off, bullet_number) {
+#  bullets_off[bullet_number].sprite.SetOpacity (0);
+#  bullets_on[bullet_number].sprite.SetOpacity (1);
+#
+#  global.times_bullets_switched++;
+#}
+#
+#fun init_bullets () {
+#  set_progress_indicator (0);
+#  global.times_bullets_switched = 0;
+#  global.on_off = 1;
+#}
+#
+#fun animate_progress_indicator (progress, time) {
+#  #--- It is implement here because not work Plymouth.SetQuitFunction() ---
+#  if (Plymouth.GetMode() == "shutdown" || Plymouth.GetMode() == "reboot") {
+#    return;
+#  }
+#
+#  if (progress <= 3.0) {
+#    return;
+#  }
+#
+#  if (global.progress_time == NULL) {
+#    global.progress_time = progress;
+#    init_bullets ();
+#  }
+#
+#  if ((progress - global.progress_time) >= 0.6) {
+#    global.progress_time = progress;
+#
+#    if (global.on_off) {
+#      switch_on_bullet (progress_indicator.bullets_on, progress_indicator.bullets_off, global.times_bullets_switched);
+#    }
+#    else {
+#      switch_on_bullet (progress_indicator.bullets_off, progress_indicator.bullets_on, global.times_bullets_switched);
+#    }
+#  }
+#
+#  if (global.times_bullets_switched > INDEX) {
+#    global.on_off = !global.on_off;
+#    global.times_bullets_switched = 0;
+#  }
+#}
 
-  global.times_bullets_switched++;
-}
-
-fun init_bullets () {
-  set_progress_indicator (0);
-  global.times_bullets_switched = 0;
-  global.on_off = 1;
-}
-
-fun animate_progress_indicator (progress, time) {
-  #--- It is implement here because not work Plymouth.SetQuitFunction() ---
-  if (Plymouth.GetMode() == "shutdown" || Plymouth.GetMode() == "reboot") {
-    return;
-  }
-
-  if (progress <= 3.0) {
-    return;
-  }
-
-  if (global.progress_time == NULL) {
-    global.progress_time = progress;
-    init_bullets ();
-  }
-
-  if ((progress - global.progress_time) >= 0.6) {
-    global.progress_time = progress;
-
-    if (global.on_off) {
-      switch_on_bullet (progress_indicator.bullets_on, progress_indicator.bullets_off, global.times_bullets_switched);
-    }
-    else {
-      switch_on_bullet (progress_indicator.bullets_off, progress_indicator.bullets_on, global.times_bullets_switched);
-    }
-  }
-
-  if (global.times_bullets_switched > INDEX) {
-    global.on_off = !global.on_off;
-    global.times_bullets_switched = 0;
-  }
-}
-
-Plymouth.SetBootProgressFunction(animate_progress_indicator);
+#Plymouth.SetBootProgressFunction(animate_progress_indicator);
 
 # ----------------------------- Quit -----------------------------
 # not work...
