@@ -1,3 +1,10 @@
+gooroom-bootsplash-theme (1.0.0+grm2u2+han2u1+mofa01) unstable; urgency=medium
+
+  [ jongkyung.woo ]
+  * [c4ba1ec6] Modified project logo and postinst script
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 06 Oct 2020 12:46:09 +0900
+
 gooroom-bootsplash-theme (1.0.0+grm2u2+han2u1) unstable; urgency=medium
 
   [ Jeong HaeRyong ]
