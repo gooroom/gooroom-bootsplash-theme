@@ -32,10 +32,10 @@ win_x_ratio = 1280 / win_width;
 
 
 # ----------------------------- Logo -----------------------------
-logo_y_ratio = 0.396;
+logo_y_ratio = 0.45;
 
-logo.width = 120 / win_x_ratio;
-logo.height = 184 / win_x_ratio;
+logo.width = 240 / win_x_ratio;
+logo.height = 48 / win_x_ratio;
 
 logo.x = Window.GetX () + win_width / 2 - logo.width / 2;
 logo.y = Window.GetY () + win_height * logo_y_ratio;
