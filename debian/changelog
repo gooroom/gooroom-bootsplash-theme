@@ -1,3 +1,10 @@
+gooroom-bootsplash-theme (1.0.0+grm2u2+kepco01) unstable; urgency=medium
+
+  [ boyeon.choi ]
+  * [5b3337d8] bootsplash for kepco
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Wed, 02 Dec 2020 17:38:24 +0900
+
 gooroom-bootsplash-theme (1.0.0+grm2u2+han2u1+mofa01) unstable; urgency=medium
 
   [ jongkyung.woo ]
