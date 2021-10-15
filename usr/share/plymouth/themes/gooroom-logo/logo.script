@@ -25,12 +25,12 @@ win_height = Window.GetHeight();
 # logo image
 width_ratio = 9.4;
 height_ratio = 23.1;
-y_ratio = 31;
+y_ratio = 38;
 logo = Image ("gooroom-symbol.png");
 #logo.width = win_width * width_ratio / 100;
 #logo.height = win_height * height_ratio / 100;
 logo.width = 120;
-logo.height = 184.8;
+logo.height = 136;
 logo.image = logo.Scale (logo.width, logo.height);
 logo.x = Window.GetX() + win_width / 2 - logo.width / 2;
 logo.y = Window.GetY() + win_height * y_ratio / 100;
