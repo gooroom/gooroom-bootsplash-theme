@@ -1,3 +1,13 @@
+gooroom-bootsplash-theme (1.0.0+grm3u1) unstable; urgency=medium
+
+  [ jongkyung.woo ]
+  * [f3a021fc] Rebuild gooroom-3.0
+
+  [ boyeon.choi ]
+  * [85b9a69c] Gooroom 3.0 Initialization
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Sat, 04 Dec 2021 15:49:52 +0900
+
 gooroom-bootsplash-theme (1.0.0+grm2u2) unstable; urgency=medium
 
   [ HaeRyong Jeong ]
